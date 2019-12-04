@@ -28,6 +28,6 @@ public class UserController {
 
     @RequestMapping(path = "/login", method = RequestMethod.POST)
     public Response userLogin(@RequestBody LoginRequest loginRequest) {
-        return null;
+        return userService.getUserInfoByUsernameAndPassword(loginRequest.getUsername(), loginRequest.getPassword());
     }
 }

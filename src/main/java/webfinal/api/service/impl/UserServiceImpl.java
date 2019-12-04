@@ -32,4 +32,14 @@ public class UserServiceImpl implements UserService {
         }
         return Response.builder().code(1).message("Fail!").data(null).build();
     }
+
+    @Override
+    public Response getUserInfoByUsernameAndPassword(String username, String password) {
+        Users userInfo = userDao.getUserByUsernameAndPassword(username, password);
+        if (userInfo != null) {
+            Response response = Response.builder().code(0).message("Successfully").data(userInfo).build();
+            return response;
+        }
+        return Response.builder().code(1).message("Fail!").data(null).build();
+    }
 }

@@ -7,4 +7,6 @@ public interface UserService {
     Response createUser(String username, String password, String email, String phoneNumber);
 
     Response getUserInfoById(Integer userId);
+
+    Response getUserInfoByUsernameAndPassword(String username, String password);
 }
