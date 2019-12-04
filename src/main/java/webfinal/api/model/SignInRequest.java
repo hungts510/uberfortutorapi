@@ -17,7 +17,6 @@ public class SignInRequest {
     @JsonProperty("phone_number")
     private String phoneNumber;
 
-    public String getUsername() {
-        return username;
-    }
+    @JsonProperty("role")
+    private String role;
 }

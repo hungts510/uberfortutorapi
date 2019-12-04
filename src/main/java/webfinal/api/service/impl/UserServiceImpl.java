@@ -13,9 +13,9 @@ public class UserServiceImpl implements UserService {
     UserDao userDao;
 
     @Override
-    public Response createUser(String username, String password, String email, String phoneNumber) {
-        Users registerUser = new Users(username, password, email, phoneNumber);
-        if (username != null && password != null && email != null && phoneNumber != null) {
+    public Response createUser(String username, String password, String email, String phoneNumber, String role) {
+        Users registerUser = new Users(username, password, email, phoneNumber, role);
+        if (username != null && password != null && email != null && phoneNumber != null && role != null) {
             userDao.insertUser(registerUser);
             Response registerResponse = Response.builder().code(0).message("Successfully").data(registerUser).build();
             return registerResponse;

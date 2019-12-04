@@ -17,7 +17,7 @@ public class UserController {
 
     @RequestMapping(path = "/sign-in", method = RequestMethod.POST)
     public Response userSignIn(@RequestBody SignInRequest signInRequest) {
-        return userService.createUser(signInRequest.getUsername(), signInRequest.getPassword(), signInRequest.getEmail(), signInRequest.getPhoneNumber());
+        return userService.createUser(signInRequest.getUsername(), signInRequest.getPassword(), signInRequest.getEmail(), signInRequest.getPhoneNumber(), signInRequest.getRole());
     }
 
     @RequestMapping(path = "/user/get", method = RequestMethod.GET)

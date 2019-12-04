@@ -8,7 +8,7 @@ import webfinal.api.entity.Users;
 @Repository
 public interface UserDao {
 
-    @Insert("INSERT INTO users(username, password, email, phone_number) VALUES (#{username}, #{password}, #{email}, #{phoneNumber})")
+    @Insert("INSERT INTO users(username, password, email, phone_number, role) VALUES (#{username}, #{password}, #{email}, #{phoneNumber}, #{role})")
     @SelectKey(statement = " SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = Integer.class)
     Integer insertUser(Users newUser);
 
